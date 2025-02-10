@@ -9,6 +9,11 @@ const router = createBrowserRouter([
     path: "/",
     element: <MainLayout />,
     children: [
+      {
+        index: true,
+        element: <CategoryPage />,
+        loader: () => ({ params: { categoryId: "1" } }),
+      },
       { path: "category/:categoryId", element: <CategoryPage /> },
       { path: "cart", element: <Cart /> },
     ],
